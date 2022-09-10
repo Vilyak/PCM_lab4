@@ -162,5 +162,10 @@ namespace WindowsFormsApp1
             zedGraph.AxisChange();
             zedGraph.Invalidate();
         }
+
+        private void zedGraph_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
