@@ -59,7 +59,7 @@
             this.dataGridViewX.ShowCellToolTips = false;
             this.dataGridViewX.ShowEditingIcon = false;
             this.dataGridViewX.ShowRowErrors = false;
-            this.dataGridViewX.Size = new System.Drawing.Size(103, 25);
+            this.dataGridViewX.Size = new System.Drawing.Size(632, 25);
             this.dataGridViewX.TabIndex = 0;
             // 
             // dataGridViewY
@@ -72,7 +72,7 @@
             this.dataGridViewY.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewY.ColumnHeadersVisible = false;
             this.dataGridViewY.EnableHeadersVisualStyles = false;
-            this.dataGridViewY.Location = new System.Drawing.Point(202, 12);
+            this.dataGridViewY.Location = new System.Drawing.Point(38, 54);
             this.dataGridViewY.Name = "dataGridViewY";
             this.dataGridViewY.RowHeadersVisible = false;
             this.dataGridViewY.ScrollBars = System.Windows.Forms.ScrollBars.None;
@@ -80,7 +80,7 @@
             this.dataGridViewY.ShowCellToolTips = false;
             this.dataGridViewY.ShowEditingIcon = false;
             this.dataGridViewY.ShowRowErrors = false;
-            this.dataGridViewY.Size = new System.Drawing.Size(103, 25);
+            this.dataGridViewY.Size = new System.Drawing.Size(629, 25);
             this.dataGridViewY.TabIndex = 1;
             // 
             // label1
@@ -97,7 +97,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.Location = new System.Drawing.Point(176, 17);
+            this.label2.Location = new System.Drawing.Point(12, 59);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(20, 20);
             this.label2.TabIndex = 3;
@@ -106,7 +106,7 @@
             // buttonSolve
             // 
             this.buttonSolve.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.buttonSolve.Location = new System.Drawing.Point(328, 5);
+            this.buttonSolve.Location = new System.Drawing.Point(686, 12);
             this.buttonSolve.Name = "buttonSolve";
             this.buttonSolve.Size = new System.Drawing.Size(115, 32);
             this.buttonSolve.TabIndex = 4;
@@ -116,7 +116,8 @@
             // 
             // textBoxResult
             // 
-            this.textBoxResult.Location = new System.Drawing.Point(12, 43);
+            this.textBoxResult.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.textBoxResult.Location = new System.Drawing.Point(12, 95);
             this.textBoxResult.Multiline = true;
             this.textBoxResult.Name = "textBoxResult";
             this.textBoxResult.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
@@ -125,7 +126,8 @@
             // 
             // zedGraph
             // 
-            this.zedGraph.Location = new System.Drawing.Point(467, 43);
+            this.zedGraph.BackColor = System.Drawing.Color.SteelBlue;
+            this.zedGraph.Location = new System.Drawing.Point(467, 95);
             this.zedGraph.Name = "zedGraph";
             this.zedGraph.ScrollGrace = 0D;
             this.zedGraph.ScrollMaxX = 0D;
@@ -141,7 +143,7 @@
             // 
             // buttonGraphClear
             // 
-            this.buttonGraphClear.Location = new System.Drawing.Point(730, 5);
+            this.buttonGraphClear.Location = new System.Drawing.Point(686, 54);
             this.buttonGraphClear.Name = "buttonGraphClear";
             this.buttonGraphClear.Size = new System.Drawing.Size(127, 30);
             this.buttonGraphClear.TabIndex = 7;
@@ -153,7 +155,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(869, 332);
+            this.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.ClientSize = new System.Drawing.Size(869, 390);
             this.Controls.Add(this.buttonGraphClear);
             this.Controls.Add(this.zedGraph);
             this.Controls.Add(this.textBoxResult);

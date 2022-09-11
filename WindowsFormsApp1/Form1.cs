@@ -13,7 +13,6 @@ namespace WindowsFormsApp1
 {
     public partial class Form1 : Form
     {
-        // Получим панель для рисования
         GraphPane pane;
 
         public Form1()
@@ -26,10 +25,10 @@ namespace WindowsFormsApp1
         private void Form1_Load(object sender, EventArgs e)
         {
             dataGridViewX.RowCount = 1;
-            dataGridViewX.ColumnCount = 6;
+            dataGridViewX.ColumnCount = 7;
 
             dataGridViewY.RowCount = 1;
-            dataGridViewY.ColumnCount = 6;
+            dataGridViewY.ColumnCount = 7;
 
             foreach (DataGridViewColumn column in dataGridViewX.Columns)
                 column.Width = 60;
@@ -42,8 +41,8 @@ namespace WindowsFormsApp1
 
         public void FillDefault()
         {
-            double[] x = { 0, 2, 4, 6, 8, 10};
-            double[] y = { 5, -1, 0.5, 1.5, 4.5, 8.5 };
+            double[] x = { -3, -2, -1, 0, 1, 2, 3 };
+            double[] y = { 2.6, -0.3, -2, -2.3, -1.5, 0.7, 3.2 };
 
             for (int i = 0; i < x.Length; i++)
             {
@@ -83,7 +82,6 @@ namespace WindowsFormsApp1
             pane.YAxis.Scale.MaxAuto = false;
             pane.XAxis.Scale.Max = x[x.Length - 1];
 
-            // по Oy - автоматически (для Ox можно так же сделать)
             pane.YAxis.Scale.MinAuto = true;
             pane.YAxis.Scale.MaxAuto = true;
 
@@ -93,19 +91,19 @@ namespace WindowsFormsApp1
 
         private void buttonSolve_Click(object sender, EventArgs e)
         {
-            int n = 6;
+            int n = 7;
 
             double[] x = dataGridViewInMassive(dataGridViewX);
             double[] y = dataGridViewInMassive(dataGridViewY);
 
             DrawGraph("Исходный график", x, y, Color.Red);
 
-            // Используется для графика аппроксимирующих функций
             double[] yApproximation = new double[n];
 
             MHK mhk = new MHK(x, y);
 
-            // ------------------------- y = ax+b -------------------------
+
+
             mhk.LinearApproximation();
 
             addTextInTextBox(textBoxResult, "Функция y = ax+b:");
@@ -122,7 +120,9 @@ namespace WindowsFormsApp1
             addTextInTextBox(textBoxResult, "", true);
             addTextInTextBox(textBoxResult, "", true);
 
-            // ------------------------- y = ax^2+bx+c -------------------------
+
+
+
             mhk.QuadraticApproximation();
 
             addTextInTextBox(textBoxResult, "Функция y = ax^2+bx+c:");
@@ -140,19 +140,21 @@ namespace WindowsFormsApp1
             addTextInTextBox(textBoxResult, "", true);
             addTextInTextBox(textBoxResult, "", true);
 
-            // ------------------------- y = a lnx + b -------------------------
-            mhk.LogarifmApproximation();
 
-            addTextInTextBox(textBoxResult, "Функция y = a lnx + b:");
-            addTextInTextBox(textBoxResult, String.Format("a = {0:f3} b = {1:f3} r = {2:f3}", mhk.a, mhk.b, mhk.r), true);
 
-            addTextInTextBox(textBoxResult, "Y(xi)  |", true);
-            for (int i = 0; i < n; i++)
-            {
-                yApproximation[i] = mhk.LogarifmFunc(x[i]);
-                addTextInTextBox(textBoxResult, String.Format("{0:f3}", yApproximation[i]) + "  ");
-            }
-            DrawGraph("y = a lnx + b", x, yApproximation, Color.Yellow);
+
+            //mhk.LogarifmApproximation();
+
+            //addTextInTextBox(textBoxResult, "Функция y = a lnx + b:");
+            //addTextInTextBox(textBoxResult, String.Format("a = {0:f3} b = {1:f3} r = {2:f3}", mhk.a, mhk.b, mhk.r), true);
+
+            //addTextInTextBox(textBoxResult, "Y(xi)  |", true);
+            //for (int i = 0; i < n; i++)
+            //{
+            //    yApproximation[i] = mhk.LogarifmFunc(x[i]);
+            //    addTextInTextBox(textBoxResult, String.Format("{0:f3}", yApproximation[i]) + "  ");
+            //}
+            //DrawGraph("y = a lnx + b", x, yApproximation, Color.Yellow);
 
         }
 

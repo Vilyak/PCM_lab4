@@ -8,21 +8,17 @@ namespace WindowsFormsApp1
 {
     internal class MHK
     {
-        public int n = 6;
+        public int n = 7;
 
-        // Входные данные
         public double[] x;
         public double[] y;
 
-        // Неизвестные в уравнениях ф-й
         public double a;
         public double b;
         public double c;
 
-        // Норма отклонения
         public double r;
 
-        // Промежуточные вычисляемые данные
         public double[] x2;
         public double[] x3;
         public double[] x4;
@@ -90,19 +86,17 @@ namespace WindowsFormsApp1
             return sum;
         }
 
-        // y = ax+b
         public double LinearFunc(double x)
         {
             return a * x + b;
         }
 
-        // y = ax^2+bx+c
+
         public double QuadraticFunc(double x)
         {
             return a * Math.Pow(x, 2) + b * x + c;
         }
 
-        // y = a lnx + b
         public double LogarifmFunc(double x)
         {
             return a * Math.Log(x) + b;
@@ -126,7 +120,6 @@ namespace WindowsFormsApp1
             double sumY = Sum(y);
             double sumX2 = Sum(x2);
 
-            // Составим СЛАУ для нахождения неизвестных a,b и решим ее методом Крамера.
             Matrix matrix = new Matrix(2, 2);
             matrix[0, 0] = sumX2;
             matrix[0, 1] = sumX;
@@ -164,7 +157,6 @@ namespace WindowsFormsApp1
             double sumX3 = Sum(x3);
             double sumX4 = Sum(x4);
 
-            // Составим СЛАУ для нахождения неизвестных a,b,c и решим ее методом Крамера.
             Matrix matrix = new Matrix(3, 3);
             matrix[0, 0] = sumX4;
             matrix[0, 1] = sumX3;
@@ -215,7 +207,6 @@ namespace WindowsFormsApp1
             double sumlnx2 = Sum(lnx2);
             double sumylnx = Sum(ylnx);
 
-            // Составим СЛАУ для нахождения неизвестных a,b и решим ее методом Крамера.
             Matrix matrix = new Matrix(2, 2);
             matrix[0, 0] = sumlnx2;
             matrix[0, 1] = sumlnx;
